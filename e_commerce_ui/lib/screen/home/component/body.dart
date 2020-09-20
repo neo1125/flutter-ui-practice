@@ -1,9 +1,9 @@
-import 'package:e_commerce_ui/constants.dart';
-import 'package:e_commerce_ui/models/Product.dart';
-import 'package:e_commerce_ui/screens/detail/detail_screen.dart';
-import 'package:e_commerce_ui/screens/home/components/category_tab.dart';
-import 'package:e_commerce_ui/screens/home/components/item_card.dart';
 import 'package:flutter/material.dart';
+import 'package:e_commerce_ui/constants.dart';
+import 'package:e_commerce_ui/model/Product.dart';
+import 'package:e_commerce_ui/screen/detail/detail_screen.dart';
+import 'package:e_commerce_ui/screen/home/component/category_tab.dart';
+import 'package:e_commerce_ui/screen/home/component/item_card.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
             "Women",
             style: Theme.of(context)
                 .textTheme
-                .headline
+                .headline5
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         ),

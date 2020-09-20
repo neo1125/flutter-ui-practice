@@ -22,7 +22,8 @@ List<Product> dummyProducts = [
     title: "Office Code",
     price: 123,
     size: 12,
-    description: "sdfsdfsdf",
+    description:
+        "${dummyText} ${dummyText} ${dummyText} ${dummyText} ${dummyText}",
     image: "assets/images/bag_1.png",
     color: Color(0xFF3D82AE),
   ),
@@ -45,7 +46,7 @@ List<Product> dummyProducts = [
     color: Color(0xFFD3A984),
   ),
   Product(
-    id: 3,
+    id: 4,
     title: "Hang Top",
     price: 234,
     size: 10,
@@ -54,7 +55,7 @@ List<Product> dummyProducts = [
     color: Color(0xFF989493),
   ),
   Product(
-    id: 4,
+    id: 5,
     title: "Old Fashion",
     price: 234,
     size: 11,
@@ -63,7 +64,7 @@ List<Product> dummyProducts = [
     color: Color(0xFFE6B398),
   ),
   Product(
-    id: 5,
+    id: 6,
     title: "Office Code",
     price: 234,
     size: 12,
@@ -72,7 +73,7 @@ List<Product> dummyProducts = [
     color: Color(0xFFFB7883),
   ),
   Product(
-    id: 6,
+    id: 7,
     title: "Office Code",
     price: 234,
     size: 12,

@@ -1,5 +1,5 @@
-import 'package:e_commerce_ui/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:e_commerce_ui/constants.dart';
 
 class CategoryTab extends StatefulWidget {
   @override
