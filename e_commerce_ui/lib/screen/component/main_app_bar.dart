@@ -6,19 +6,23 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
   final Color iconColor;
+  final Color backgroundColor;
 
   MainAppBar({
     Key key,
     this.iconColor,
+    this.backgroundColor,
   })  : preferredSize = Size.fromHeight(50.0),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Color _iconColor = (iconColor == null) ? kTextColor : iconColor;
+    Color _backgroundColor =
+        backgroundColor == null ? Colors.transparent : backgroundColor;
 
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: _backgroundColor,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(

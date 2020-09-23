@@ -22,8 +22,7 @@ List<Product> dummyProducts = [
     title: "Office Code",
     price: 123,
     size: 12,
-    description:
-        "${dummyText} ${dummyText} ${dummyText} ${dummyText} ${dummyText}",
+    description: "${dummyText}\n${dummyText}",
     image: "assets/images/bag_1.png",
     color: Color(0xFF3D82AE),
   ),

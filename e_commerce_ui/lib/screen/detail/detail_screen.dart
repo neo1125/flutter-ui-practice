@@ -1,7 +1,8 @@
-import 'package:e_commerce_ui/screen/detail/component/body.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_ui/model/Product.dart';
 import 'package:e_commerce_ui/screen/component/main_app_bar.dart';
+
+import 'component/body.dart';
 
 class DetailScreen extends StatelessWidget {
   final Product product;
@@ -14,8 +15,9 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: product.color,
+      backgroundColor: Colors.white,
       appBar: MainAppBar(
+        backgroundColor: product.color,
         iconColor: Colors.white,
       ),
       body: Body(
