@@ -18,3 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 ## E-commerce-App-UI-Flutter 참고
 - [github](https://github.com/abuanwar072/E-commerce-App-UI-Flutter)
 - [youtube](https://www.youtube.com/watch?v=XBKzpTz65Io)
+
+## Layout
+![List](../screenshot/e-commerce-list.png)
+![Detail](../screenshot/e-commerce-detail.png)
