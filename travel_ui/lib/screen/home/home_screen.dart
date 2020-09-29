@@ -7,10 +7,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFE1e5E7),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-      ),
       body: Body(),
       bottomNavigationBar: BottomNavigationBar(
         items: [

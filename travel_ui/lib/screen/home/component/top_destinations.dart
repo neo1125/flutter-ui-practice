@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_ui/model/Destination.dart';
+import 'package:travel_ui/screen/destination/destination_screen.dart';
 
 import 'activities_and_description.dart';
 import 'carousel_title.dart';
@@ -27,18 +28,28 @@ class TopDestinations extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: 10),
             itemCount: topDestinations.length,
-            itemBuilder: (context, index) =>
-                buildDestinationCard(cardWidth, carouselHeight, index),
+            itemBuilder: (context, index) => buildDestinationCard(
+              context,
+              cardWidth,
+              carouselHeight,
+              topDestinations[index],
+            ),
           ),
         ),
       ],
     );
   }
 
-  Widget buildDestinationCard(
-      double cardWidth, double carouselHeight, int index) {
+  Widget buildDestinationCard(BuildContext context, double cardWidth,
+      double carouselHeight, Destination destination) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DestinationScreen(
+              destination: destination,
+            ),
+          )),
       child: Container(
         width: cardWidth,
         margin: EdgeInsets.only(right: 10),
@@ -47,10 +58,10 @@ class TopDestinations extends StatelessWidget {
             ActivitiesAndDescription(
               carouselHeight: carouselHeight,
               cardWidth: cardWidth,
-              destination: topDestinations[index],
+              destination: destination,
             ),
             CityAndImage(
-              destination: topDestinations[index],
+              destination: destination,
             ),
           ],
         ),
