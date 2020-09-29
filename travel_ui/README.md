@@ -18,3 +18,8 @@ samples, guidance on mobile development, and a full API reference.
 ## Travel UI Tutorial | Apps From Scratch 참고
 - [github](https://github.com/MarcusNg/flutter_travel_ui)
 - [youtube](https://www.youtube.com/watch?v=CSa6Ocyog4U)
+
+## Layout
+- [dribbble](https://dribbble.com/shots/6510521-Travel-App-for-booking-unique-experience/attachments)
+![Home](../screenshot/travel-home.png)
+![Destination](../screenshot/travel-destination.png)
