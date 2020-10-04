@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reflectly_clone/screen/intro/component/scale_up_widget.dart';
 import 'fade_in_widget.dart';
 
 class Welcome extends StatefulWidget {
@@ -28,7 +29,7 @@ class _WelcomeState extends State<Welcome> with AutomaticKeepAliveClientMixin {
           child: buildMessages(),
         ),
         Positioned(
-          bottom: 50,
+          bottom: 80,
           child: buildButtons(),
         ),
       ],
@@ -38,41 +39,51 @@ class _WelcomeState extends State<Welcome> with AutomaticKeepAliveClientMixin {
   Column buildButtons() {
     return Column(
       children: [
-        FlatButton(
-          textColor: Color(0xFF7173c7),
-          color: Colors.white,
-          padding: EdgeInsets.only(
-            top: 15,
-            bottom: 15,
-            left: 70,
-            right: 70,
+        ScaleUpWidget(
+          delay: 2500,
+          duration: 600,
+          child: FlatButton(
+            textColor: Color(0xFF7173c7),
+            color: Colors.white,
+            padding: EdgeInsets.only(
+              top: 15,
+              bottom: 15,
+              left: 70,
+              right: 70,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+            onPressed: () {
+              widget.pageController.animateToPage(
+                1,
+                duration: Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
+            child: Text("hi, reflectly!".toUpperCase()),
           ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          ),
-          onPressed: () {
-            widget.pageController.animateToPage(
-              1,
-              duration: Duration(milliseconds: 500),
-              curve: Curves.easeInOut,
-            );
-          },
-          child: Text("hi, reflectly!".toUpperCase()),
         ),
-        FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 50),
-          onPressed: () {
-            // Navigator(
-            //     context,
-            //     PageRouteBuilder(
-            //         pageBuilder: (_, __, ___) => LoginScreen(),
-            //         transitionDuration: Duration(milliseconds: 800)));
-          },
-          child: Text(
-            "i already have an account".toUpperCase(),
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.white30,
+        ScaleUpWidget(
+          delay: 2200,
+          duration: 600,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50),
+            child: FlatButton(
+              onPressed: () {
+                // Navigator(
+                //     context,
+                //     PageRouteBuilder(
+                //         pageBuilder: (_, __, ___) => LoginScreen(),
+                //         transitionDuration: Duration(milliseconds: 800)));
+              },
+              child: Text(
+                "i already have an account".toUpperCase(),
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white30,
+                ),
+              ),
             ),
           ),
         ),
@@ -84,7 +95,7 @@ class _WelcomeState extends State<Welcome> with AutomaticKeepAliveClientMixin {
     return Column(
       children: [
         FadeInWidget(
-          delay: 600,
+          delay: 500,
           child: Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Text(
@@ -99,7 +110,7 @@ class _WelcomeState extends State<Welcome> with AutomaticKeepAliveClientMixin {
           ),
         ),
         FadeInWidget(
-          delay: 1200,
+          delay: 1500,
           child: Text(
             "I'm Reflectly",
             style: TextStyle(
@@ -111,7 +122,7 @@ class _WelcomeState extends State<Welcome> with AutomaticKeepAliveClientMixin {
           ),
         ),
         FadeInWidget(
-          delay: 1800,
+          delay: 2000,
           child: Padding(
             padding: const EdgeInsets.only(top: 40),
             child: Text(
