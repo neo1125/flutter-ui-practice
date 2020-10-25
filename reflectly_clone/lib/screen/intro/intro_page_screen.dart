@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:reflectly_clone/screen/intro/component/scale_up_widget.dart';
 import 'component/nickname.dart';
+import 'component/reminder.dart';
+import 'component/themes.dart';
 import 'component/welcome.dart';
 
 class IntroPageScreen extends StatefulWidget {
@@ -85,16 +87,17 @@ class _IntroPageScreenState extends State<IntroPageScreen>
                     pageController: pageController,
                     updateFocusTextField: changedTextFieldFocus,
                   ),
-                  Stack(
-                    children: [],
+                  Themes(
+                    pageController: pageController,
                   ),
+                  Reminder(),
                 ],
               ),
               // 뒤로 가기 버튼
               AnimatedContainer(
                 duration: Duration(milliseconds: animateDuration),
                 curve: Curves.easeInOut,
-                margin: EdgeInsets.only(top: 50),
+                margin: EdgeInsets.only(top: 70),
                 transform: Matrix4.translationValues(
                     hasFocusTextField ? -50 : pageIndex < 1 ? -50 : 0, 0, 0),
                 child: IconButton(

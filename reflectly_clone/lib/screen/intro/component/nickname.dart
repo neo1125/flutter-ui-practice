@@ -49,6 +49,12 @@ class _NicknameState extends State<Nickname>
       setState(() {
         focusTextField = _focusNode.hasFocus;
         widget.updateFocusTextField(focusTextField);
+
+        if (focusTextField) {
+          _animationController.forward();
+        } else {
+          _animationController.reverse();
+        }
       });
     });
   }
@@ -157,6 +163,30 @@ class _NicknameState extends State<Nickname>
           ),
         ),
         Positioned(
+          right: 30,
+          bottom: focusTextField ? 320 : 200,
+          child: AnimatedOpacity(
+            opacity: focusTextField ? 1 : 0,
+            duration: Duration(milliseconds: 50),
+            child: Container(
+              width: 50,
+              height: 50,
+              child: FlatButton(
+                child: Icon(Icons.check),
+                color: Colors.white,
+                padding: EdgeInsets.only(
+                  right: 5,
+                  left: 6,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18),
+                ),
+                onPressed: () => {_focusNode.unfocus()},
+              ),
+            ),
+          ),
+        ),
+        Positioned(
           bottom: 140,
           child: FlatButton(
             disabledColor: Colors.black12,
@@ -165,8 +195,8 @@ class _NicknameState extends State<Nickname>
             padding: EdgeInsets.only(
               top: 15,
               bottom: 15,
-              left: 70,
-              right: 70,
+              left: 80,
+              right: 80,
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25),
@@ -183,7 +213,7 @@ class _NicknameState extends State<Nickname>
                   },
             child: Text("continue".toUpperCase()),
           ),
-        )
+        ),
       ],
     );
   }
