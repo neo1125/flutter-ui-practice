@@ -162,12 +162,14 @@ class _NicknameState extends State<Nickname>
             ],
           ),
         ),
-        Positioned(
+        AnimatedPositioned(
+          duration: Duration(milliseconds: 600),
+          curve: Curves.decelerate,
           right: 30,
-          bottom: focusTextField ? 320 : 200,
+          bottom: focusTextField ? 310 : 200,
           child: AnimatedOpacity(
             opacity: focusTextField ? 1 : 0,
-            duration: Duration(milliseconds: 50),
+            duration: Duration(milliseconds: 200),
             child: Container(
               width: 50,
               height: 50,
