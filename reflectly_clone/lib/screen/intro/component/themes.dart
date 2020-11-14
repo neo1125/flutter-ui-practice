@@ -15,12 +15,32 @@ class Themes extends StatefulWidget {
 class _ThemesState extends State<Themes> {
   @override
   Widget build(BuildContext context) {
+    List<Widget> colors = List();
+    for (int i = 0; i < 10; i++) {
+      colors.add(Stack(
+        children: [
+          Positioned(
+            top: 100,
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 3, color: Colors.white),
+                  color: Colors.blue),
+            ),
+          ),
+        ],
+      ));
+    }
     return Stack(
       alignment: Alignment.topCenter,
       children: [
         Positioned(
           top: 140,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            verticalDirection: VerticalDirection.up,
             children: [
               Text(
                 "Themes, {name}!\nWhich one is most you?",
@@ -41,6 +61,23 @@ class _ThemesState extends State<Themes> {
                     color: Colors.black26,
                   ),
                   textAlign: TextAlign.center,
+                ),
+              ),
+              // todo: color selector
+              Expanded(
+                child: SizedBox(
+                  width: double.infinity,
+                  child: PageView(
+                    physics: BouncingScrollPhysics(),
+                    pageSnapping: true,
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        color: Colors.red,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
